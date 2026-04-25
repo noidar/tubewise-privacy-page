@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — Tubeshelf</title>
+  <meta name="description" content="What Tubeshelf reads, where it stores it, and what it never transmits.">
+  <link rel="canonical" href="./privacy.html">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="doc">
+  <header class="doc-head">
+    <div class="container">
+      <a class="doc-back" href="./">← Back to Tubeshelf</a>
+      <h1>Privacy Policy</h1>
+      <p class="muted">Last updated: 25 April 2026</p>
+    </div>
+  </header>
+
+  <main class="container doc-body">
+    <p>
+      Tubeshelf ("the Extension") is a browser extension that helps you
+      organise your YouTube subscriptions and hide distracting interface
+      elements such as Shorts, recommendations and comments. This document
+      explains exactly what data the Extension touches and where it lives.
+    </p>
+
+    <h2>TL;DR</h2>
+    <ul>
+      <li>The Extension stores data <strong>only on your local device</strong>,
+        inside your browser, via the <code>chrome.storage.local</code> API.</li>
+      <li>The Extension does <strong>not</strong> transmit, sell, share or
+        otherwise send any of your data to any server controlled by the
+        developer or by third parties.</li>
+      <li>The Extension does <strong>not</strong> include analytics,
+        telemetry, ads, fingerprinting or any third-party tracking SDK.</li>
+    </ul>
+
+    <h2>What data is processed</h2>
+    <p>
+      When you click <strong>Refresh subscriptions</strong>, Tubeshelf calls
+      YouTube's own public InnerTube API (the same endpoints youtube.com
+      uses) to read <strong>your own subscriptions list</strong>. For each
+      channel it stores:
+    </p>
+    <ul>
+      <li>channel id and handle</li>
+      <li>channel name and avatar URL</li>
+      <li>the timestamp when it was last seen in your subscriptions</li>
+      <li>any tag you assign to the channel</li>
+      <li>any auto-detected topic suggestions</li>
+      <li>the date of the channel's most recent upload (read from its
+        public RSS feed)</li>
+    </ul>
+    <p>
+      You may also create your own tags and a per-channel blocklist; both
+      are stored alongside the channel data.
+    </p>
+    <p>
+      All of this is written to <code>chrome.storage.local</code>, which the
+      browser keeps on your device. None of it is uploaded anywhere by the
+      Extension.
+    </p>
+
+    <h2>What data is <em>not</em> processed</h2>
+    <ul>
+      <li>The Extension does <strong>not</strong> read your browsing history,
+        cookies, passwords, payment information, location or any other
+        personal data.</li>
+      <li>The Extension does <strong>not</strong> modify your YouTube
+        account, post comments, subscribe / unsubscribe to channels, or
+        interact with the site on your behalf in any way.</li>
+      <li>The Extension does <strong>not</strong> make network requests to
+        any server other than YouTube's own — specifically
+        <code>https://www.youtube.com/feed/channels</code>,
+        <code>https://www.youtube.com/youtubei/v1/browse</code>, and
+        <code>https://www.youtube.com/feeds/videos.xml</code> — to read
+        your subscription list and each channel's latest upload date.
+        Channel avatar thumbnails are loaded by the browser as ordinary
+        <code>&lt;img&gt;</code> tags from whatever CDN URL YouTube
+        returned (typically <code>*.ggpht.com</code> or
+        <code>*.googleusercontent.com</code>); the Extension itself does
+        not initiate those requests as fetches.</li>
+    </ul>
+
+    <h2>How to delete your data</h2>
+    <ul>
+      <li>Open the dashboard, scroll to <strong>Backup</strong>, and click
+        <strong>Export</strong> if you want a JSON copy of your data first.</li>
+      <li>To wipe everything: open <code>chrome://extensions</code>, click
+        <strong>Remove</strong> on Tubeshelf. Chrome deletes all stored
+        data along with the Extension.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <table>
+      <thead>
+        <tr><th>Permission</th><th>Why we need it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>storage</code></td>
+          <td>Persist your tags, channel-tag assignments, blocklist and
+            settings between browser sessions. Stored locally only.</td>
+        </tr>
+        <tr>
+          <td><code>host_permissions: youtube.com</code></td>
+          <td>Inject the content script that hides Shorts, recommendations
+            and comments, applies your channel blocklist, and (in the
+            service worker) reads your subscription list via YouTube's own
+            InnerTube API using your existing session cookies.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Children</h2>
+    <p>
+      Tubeshelf is not directed at children under 13. It does not knowingly
+      collect personal information.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy ever changes, the new version will be published at the
+      same URL with an updated "Last updated" date. Material changes will
+      also be noted in the Chrome Web Store release notes.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Open a GitHub issue at the project repository, or email
+      <a href="mailto:support@tubeshelf.app">support@tubeshelf.app</a>.
+    </p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav>
+        <a href="./">Home</a>
+        <a href="https://github.com/" rel="noopener">GitHub</a>
+        <a href="mailto:support@tubeshelf.app">Contact</a>
+      </nav>
+      <p class="muted">© 2026 Tubeshelf. MIT licensed.</p>
+    </div>
+  </footer>
+</body>
+</html>

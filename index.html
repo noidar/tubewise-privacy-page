@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tubeshelf — organise YouTube subscriptions, hide Shorts</title>
+  <meta name="description"
+    content="Tag your YouTube subscriptions, hide Shorts everywhere, and silence the recommendations rail. All data stays in your browser.">
+  <link rel="canonical" href="./">
+  <meta property="og:title" content="Tubeshelf">
+  <meta property="og:description"
+    content="Tag your YouTube subscriptions, hide Shorts everywhere, and silence the recommendations rail.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">Tubeshelf</span>
+      </div>
+      <h1>Organise your YouTube subscriptions. Hide Shorts. Skip the noise.</h1>
+      <p class="lead">
+        Tag every channel into a colour-coded grid, filter the subscriptions
+        feed by tag, hide Shorts and recommendations everywhere — and keep
+        all your data on your own device.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="https://chromewebstore.google.com/" rel="noopener">
+          Add to Chrome
+        </a>
+        <a class="btn ghost" href="https://github.com/" rel="noopener">
+          Source on GitHub
+        </a>
+      </div>
+      <p class="cta-note">Manifest V3 · React 19 · MIT licensed</p>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="container">
+      <h2>What it does</h2>
+      <div class="grid">
+        <article class="feature">
+          <h3>Subscription dashboard</h3>
+          <p>
+            Auto-tags every channel into Music, Tech, Gaming, Learning and
+            17 other topics. Group by tag, name, or recently seen.
+          </p>
+        </article>
+        <article class="feature">
+          <h3>Tag pill row</h3>
+          <p>
+            A filter bar injected above <code>/feed/subscriptions</code>
+            lets you show only one tag's channels at a time.
+          </p>
+        </article>
+        <article class="feature">
+          <h3>Focus mode</h3>
+          <p>
+            One master toggle hides Shorts (in feeds, shelves, sidebar),
+            recommendations, comments, and the Trending sidebar.
+          </p>
+        </article>
+        <article class="feature">
+          <h3>Channel blocklist</h3>
+          <p>
+            "Block" button on every card. Blocked channels disappear
+            everywhere on YouTube, not just inside Tubeshelf.
+          </p>
+        </article>
+        <article class="feature">
+          <h3>Local-first</h3>
+          <p>
+            <code>chrome.storage.local</code> only. No accounts, no
+            servers, no telemetry. Export / import a JSON snapshot any time.
+          </p>
+        </article>
+        <article class="feature">
+          <h3>Latest-upload chip</h3>
+          <p>
+            Each card shows when the channel last uploaded, fetched from
+            the public RSS feed during the scrape.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <nav>
+        <a href="./privacy.html">Privacy policy</a>
+        <a href="https://github.com/" rel="noopener">GitHub</a>
+        <a href="mailto:support@tubeshelf.app">Contact</a>
+      </nav>
+      <p class="muted">© <span id="year"></span> Tubeshelf. MIT licensed.</p>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    </div>
+  </footer>
+</body>
+</html>
